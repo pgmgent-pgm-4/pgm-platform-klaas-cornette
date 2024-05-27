@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import SubjectCard from "../components/SubjectCard";
+import Card from "../components/Card";
 import Header from "../components/header";
 
 export default function ProgrammaPage() {
@@ -119,7 +119,7 @@ export default function ProgrammaPage() {
                   </h3>
                   <div className="flex flex-wrap">
                     {periods[period].map((subject, index) => (
-                      <SubjectCard
+                      <Card
                         key={index}
                         title={subject.course}
                         imgUrl="/img/subject.svg"

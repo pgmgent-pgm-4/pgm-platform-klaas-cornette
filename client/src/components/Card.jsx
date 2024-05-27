@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function SubjectCard ({ imgUrl, imgAlt, studyPoints, title, hours, color, subtitle }) {
+export default function Card ({ imgUrl, imgAlt, studyPoints, title, hours, color, subtitle }) {
 	return (
 		<div className={`w-96 rounded overflow-hidden shadow-lg ${color} m-2 rounded-t-15px`} >
             <img src={imgUrl} alt={imgAlt} className="w-full h-48 object-cover"/>
             <div className="mt-4 text-center">
                 <h2 className="text-2xl font-bold mb-2">{title}</h2>
-                <h3 className="text-gray-400 text-sm">{subtitle}</h3>
+                <h3 className="text-gray-400 p-6 pt-3">{subtitle}</h3>
             </div>
             {studyPoints ? (
                 <div className="flex justify-between p-6 pt-3">
