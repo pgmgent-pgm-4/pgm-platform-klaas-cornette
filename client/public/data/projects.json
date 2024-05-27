@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Party gram",
+    "subtitle": "React native",
+    "filter": "backend"
+  },
+  {
+    "title": "Back office",
+    "subtitle": "PHP",
+    "filter": "computer programming"
+  },
+  {
+    "title": "Deeldepot",
+    "subtitle": "Next.js",
+    "filter": "backend"
+  },
+  {
+    "title": "Parkiet ringen",
+    "subtitle": "Design, next.js, backlog",
+    "filter": "@work"
+  },
+  {
+    "title": "Okan",
+    "subtitle": "Java script",
+    "filter": "@work"
+  },
+  {
+    "title": "Spotify",
+    "subtitle": "Java script",
+    "filter": "computer programming"
+  }
+]

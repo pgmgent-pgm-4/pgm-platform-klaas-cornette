@@ -1,0 +1,184 @@
+[
+  {
+    "course": "IT Professional",
+    "sp": 2,
+    "hours": 5,
+    "periode": "p1",
+    "major": "Fullstack"
+  },
+  {
+    "course": "IT Professional",
+    "sp": 2,
+    "hours": 5,
+    "periode": "p2",
+    "major": "Fullstack"
+  },
+  {
+    "course": "IT Portfolio",
+    "sp": 2,
+    "hours": 4,
+    "periode": "p3",
+    "major": "Fullstack"
+  },
+  {
+    "course": "IT Portfolio",
+    "sp": 3,
+    "hours": 4,
+    "periode": "p4",
+    "major": "Fullstack"
+  },
+  {
+    "course": "IT Exploration",
+    "sp": 3,
+    "hours": 4,
+    "periode": "p5",
+    "major": "Fullstack"
+  },
+  {
+    "course": "IT Exploration",
+    "sp": 3,
+    "hours": 4,
+    "periode": "p6",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Data Management 1",
+    "sp": 3,
+    "hours": 5,
+    "periode": "p1",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Data Management 2",
+    "sp": 3,
+    "hours": 5,
+    "periode": "p3",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Data Management 3",
+    "sp": 6,
+    "hours": 8,
+    "periode": "p5",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Web 1: Essentials",
+    "sp": 4,
+    "hours": 6,
+    "periode": "p1",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Web 2: Intermediate",
+    "sp": 4,
+    "hours": 6,
+    "periode": "p2",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Web 3: Advanced",
+    "sp": 4,
+    "hours": 6,
+    "periode": "p3",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Programming 1: Essentials",
+    "sp": 5,
+    "hours": 8,
+    "periode": "p1",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Programming 2: Intermediate",
+    "sp": 5,
+    "hours": 8,
+    "periode": "p2",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Programming 3: Advanced",
+    "sp": 5,
+    "hours": 8,
+    "periode": "p3",
+    "major": "Fullstack"
+  },
+  {
+    "course": "@Work 1: Static Web Projects",
+    "sp": 6,
+    "hours": 10,
+    "periode": "p2",
+    "major": "Fullstack"
+  },
+  {
+    "course": "@Work 2: Dynamic Web Projects",
+    "sp": 6,
+    "hours": 12,
+    "periode": "p4",
+    "major": "Fullstack"
+  },
+  {
+    "course": "@Work 3: Multidisciplinary Web Projects",
+    "sp": 9,
+    "hours": 14,
+    "periode": "p6",
+    "major": "Fullstack"
+  },
+  {
+    "course": "@Work 4: Graduation Project",
+    "sp": 9,
+    "hours": 38,
+    "periode": "p7",
+    "major": "Fullstack"
+  },
+  {
+    "course": "@Work 5: Internship",
+    "sp": 18,
+    "hours": 38,
+    "periode": "p8",
+    "major": "Fullstack"
+  },
+  {
+    "course": "Web 4: Web Animations & Interactions",
+    "sp": 6,
+    "hours": 8,
+    "periode": "p4",
+    "major": "frontend"
+  },
+  {
+    "course": "Web 5: Web Frameworks",
+    "sp": 6,
+    "hours": 8,
+    "periode": "p5",
+    "major": "frontend"
+  },
+  {
+    "course": "Web 6: Creative Coding",
+    "sp": 6,
+    "hours": 8,
+    "periode": "p6",
+    "major": "frontend"
+  },
+  {
+    "course": "Programming 4: JAMStack",
+    "sp": 6,
+    "hours": 8,
+    "periode": "p4",
+    "major": "backend"
+  },
+  {
+    "course": "Programming 5: Full-stack",
+    "sp": 6,
+    "hours": 8,
+    "periode": "p5",
+    "major": "backend"
+  },
+  {
+    "course": "Programming 6: Mobile",
+    "sp": 6,
+    "hours": 8,
+    "periode": "p6",
+    "major": "backend"
+  }
+]
