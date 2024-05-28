@@ -23,6 +23,7 @@ module.exports = {
         'custom-green': '#DBFFCF',
         'custom-purple': '#F3CFFF',
         'custom-darkblue': '#01294D',
+        'custom-lightblue': '#CFE8FF',
       },
     },
   },

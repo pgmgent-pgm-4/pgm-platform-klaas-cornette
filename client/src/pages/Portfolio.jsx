@@ -2,37 +2,24 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Card from "../components/Card";
 import Header from "../components/header";
+import { useQuery } from "@apollo/client";
+import { GET_ALL_PROJECTS } from "../graphql/queries";
+
 
 export default function PortfolioPage() {
-  const [projects, setProjects] = useState([]);
   const [filter, setFilter] = useState("all");
-
   const cardColors = ["bg-custom-red", "bg-custom-green", "bg-custom-purple"];
 
-  async function loadProjects() {
-    try {
-      const response = await fetch("/data/projects.json");
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const projectsData = await response.json();
-      setProjects(projectsData);
-    } catch (error) {
-      console.error("Error fetching the JSON file:", error);
-    }
-  }
-
-  useEffect(() => {
-    loadProjects();
-  }, []);
+  const { loading, error, data } = useQuery(GET_ALL_PROJECTS);
+  if (loading) return <div>...Loading</div>;
+  if (error) return <div>...error</div>;
 
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
   };
 
-  const filteredProjects = filter === "all" 
-    ? projects 
-    : projects.filter(project => project.filter === filter);
+  const filteredProjects = filter === "all" ? data.projects : data.projects.filter((project) => project.filter === filter);
+  console.log(filteredProjects);
 
   return (
     <div>
@@ -42,35 +29,35 @@ export default function PortfolioPage() {
       </Helmet>
       <Header title="Portfolio" />
 
-      <div className="flex justify-center mb-4 space-x-4">
-        <button 
+      <div className="flex justify-center mb-8 space-x-4">
+        <button
           className={`bg-custom-darkblue py-2 px-4 rounded text-white hover:opacity-75 focus:outline-none`}
           onClick={() => handleFilterChange("all")}
         >
           All
         </button>
-        <button 
+        <button
           className={`${cardColors[0]} py-2 px-4 rounded hover:opacity-75 focus:outline-none text-black`}
           onClick={() => handleFilterChange("backend")}
         >
           Backend
         </button>
-      
-        <button 
+
+        <button
           className={`${cardColors[1]} py-2 px-4 rounded hover:opacity-75 focus:outline-none text-black`}
           onClick={() => handleFilterChange("computer programming")}
         >
           Computer Programming
         </button>
-        <button 
+        <button
           className={`${cardColors[2]} py-2 px-4 rounded hover:opacity-75 focus:outline-none text-black`}
           onClick={() => handleFilterChange("@work")}
         >
           @Work
         </button>
       </div>
-      
-      <div className="grid grid-cols-3 max-w-custom-1440 gap-2 mx-auto">
+
+      <div className="grid grid-cols-3 max-w-custom-1440 gap-2 mb-8 mx-auto">
         {filteredProjects.map((project, index) => (
           <Card
             key={index}

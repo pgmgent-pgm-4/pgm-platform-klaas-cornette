@@ -1,42 +1,45 @@
 import { gql } from "@apollo/client";
 
-export const GET_ALL_POSTS = gql`
-	query getAllPosts {
-		posts {
-			excerpt
-			id
-			title
-			slug
-			coverImage {
-				altText
-				url
-			}
-			content {
-				html
-			}
-		}
-	}
+export const GET_ALL_PROJECTS = gql`
+  query GetProjects($first: Int = 1000, $skip: Int = 0) {
+    projects(first: $first, skip: $skip) {
+      filter
+      id
+      subtitle
+      title
+    }
+  }
 `;
 
-export const GET_POST_BY_SLUG = gql`
-	query getPostBySlug($slug: String = "") {
-		post(where: { slug: $slug }) {
-			content {
-				html
-			}
-			title
-		}
-	}
+export const GET_ALL_SUBJECTS = gql`
+  query GetSubjects($first: Int = 1000, $skip: Int = 0) {
+    subjects(first: $first, skip: $skip) {
+      createdAt
+      id
+      updatedAt
+      course
+      sp
+      hours
+      periode
+      major
+    }
+  }
 `;
 
-export const GET_ALL_PORTFOLIOS = gql`
-	query GetAllPortfolioItems {
-		portfolioItems {
-			portfolioDescription
-			portfolioTitle
-			portfolioImage {
-				url
-			}
-		}
-	}
+export const GET_ALL_BLOGS = gql`
+  query GetBlogs($first: Int = 1000, $skip: Int = 0) {
+    blogs(first: $first, skip: $skip) {
+      id
+      title
+      foto
+      content
+      createdAt
+      updatedAt
+      categorie
+    }
+  }
 `;
+
+
+
+

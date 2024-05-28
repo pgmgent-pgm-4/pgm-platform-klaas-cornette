@@ -6,23 +6,23 @@ import parse from "html-react-parser";
 import { Helmet } from "react-helmet";
 
 export default function BlogPost() {
-	const { slug } = useParams();
-	console.log(slug);
-	const { loading, error, data } = useQuery(GET_POST_BY_SLUG, {
-		variables: { slug },
-	});
-	if (loading) return <>...loading</>;
-	if (error) return <>...error</>;
+	// const { slug } = useParams();
+	// console.log(slug);
+	// const { loading, error, data } = useQuery(GET_POST_BY_SLUG, {
+	// 	variables: { slug },
+	// });
+	// if (loading) return <>...loading</>;
+	// if (error) return <>...error</>;
 	// if (data) console.log(data);
 	// used  html-react-parser library to parse html into react
 	return (
 		<div>
-			<Helmet>
+			{/* <Helmet>
 				<title> AwesomeBlog | {data.post.title}</title>
 				<meta name="description" content="Blog Post ..." />
 			</Helmet>
 			<h1>{data.post.title}</h1>
-			{parse(data.post.content.html)}
+			{parse(data.post.content.html)} */}
 		</div>
 	);
 }
