@@ -1,4 +1,5 @@
 import React from "react";
+import ThemeSwitcher from "./SwitchMode";
 
 export default function NavBar() {
   return (
@@ -8,9 +9,10 @@ export default function NavBar() {
           <a href="/" className="font-bold">
             PGM Platform
           </a>
+          
         </div>
         <div className="mr-8">
-          <ul className="flex space-x-6">
+          <ul className="flex space-x-6 items-center">
             <li>
               <a href="/">Home</a>
             </li>
@@ -33,11 +35,12 @@ export default function NavBar() {
               <a href="/team">Team</a>
             </li>
             <li>
-              <a href="/search">Search</a>
+              <ThemeSwitcher />
             </li>
           </ul>
         </div>
       </div>
     </div>
+    
   );
 }
