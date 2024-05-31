@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import {
 	Route,
@@ -7,7 +6,7 @@ import {
 	createRoutesFromElements,
 } from "react-router-dom";
 import Root from "./layouts/Root";
-import { Blog, BlogPost, HomePage, NotFound, ProgrammaPage, PortfolioPage, TeamPage, ProjectDetail, Services, ServiceDetail } from "./pages";
+import { Blog, BlogPost, HomePage, NotFound, ProgrammaPage, PortfolioPage, TeamPage, ProjectDetail, Services, ServiceDetail, Opleiding } from "./pages";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -21,6 +20,7 @@ const router = createBrowserRouter(
 			<Route path="/project/:id" element={<ProjectDetail />} />
 			<Route path="/services" element={<Services />} />
 			<Route path="/service/:id" element={<ServiceDetail />} />
+			<Route path="/opleiding" element={<Opleiding />} />
 
 
 		</Route>

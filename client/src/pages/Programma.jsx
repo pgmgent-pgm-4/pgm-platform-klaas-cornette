@@ -49,7 +49,7 @@ export default function ProgrammaPage() {
                 <title>PGM | Programma</title>
                 <meta name="description" content="PGM programma" />
             </Helmet>
-            <Header title="Graduaat Programmeren" />
+            <Header title="Graduaat Programmeren" subtitle={"Dit zijn alle vakken dat u zult tegen komen in de 2 jarige opleiding."} />
 
             <FilterButtons filters={filters} handleFilterChange={handleFilterChange} cardColors={cardColors} />
 

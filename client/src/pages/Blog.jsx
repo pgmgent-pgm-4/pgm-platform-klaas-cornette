@@ -52,7 +52,7 @@ export default function Blog() {
                 <meta name="description" content="Overzicht Blog Post ..." />
             </Helmet>
 
-            <Header title="Blog" />
+            <Header title="Blog" subtitle={"Ondek de beste feestjes van de weereld hier!!!"} />
 
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={handleSearch} />
 

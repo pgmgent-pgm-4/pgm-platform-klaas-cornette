@@ -42,7 +42,7 @@ export default function PortfolioPage() {
                 <title>PGM | portfolio</title>
                 <meta name="description" content="PGM portfolio" />
             </Helmet>
-            <Header title="Portfolio" />
+            <Header title="Portfolio" subtitle={"Dit zijn de verschillende projecten dat al verwezenlijkt zijn."}/>
 
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={handleSearch} />
 

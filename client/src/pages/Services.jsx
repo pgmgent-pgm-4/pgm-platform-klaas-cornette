@@ -7,7 +7,6 @@ import Header from "../components/header";
 
 export default function Services() {
     const { loading, error, data } = useQuery(GET_ALL_SERVICES);
-    console.log(data);
     if (loading) return <>...loading</>;
     if (error) return <>...error</>;
 
@@ -21,7 +20,7 @@ export default function Services() {
                 <meta name="description" content="Overzicht Services ..." />
             </Helmet>
 
-            <Header title="Services" />
+            <Header title="Services" subtitle={"Ondek onze verschillende services die wij aan u aanbieden."} />
 
             <div className="flex flex-wrap justify-around max-w-custom-1440 gap-2 mb-8 mx-auto">
                 {data.services.map((service, index) => (

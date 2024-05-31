@@ -8,5 +8,6 @@ import TeamPage from "./Team";
 import ProjectDetail from "./ProjectDetail";
 import Services from "./Services";
 import ServiceDetail from "./ServiceDetail";
+import Opleiding from "./Opleiding";
 
-export { HomePage, NotFound, Blog, BlogPost, ProgrammaPage, PortfolioPage, TeamPage, ProjectDetail, Services, ServiceDetail };
+export { HomePage, NotFound, Blog, BlogPost, ProgrammaPage, PortfolioPage, TeamPage, ProjectDetail, Services, ServiceDetail, Opleiding };
