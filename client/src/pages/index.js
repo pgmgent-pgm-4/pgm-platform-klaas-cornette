@@ -5,5 +5,8 @@ import NotFound from "./NotFound";
 import ProgrammaPage from "./Programma";
 import PortfolioPage from "./Portfolio";
 import TeamPage from "./Team";
+import ProjectDetail from "./ProjectDetail";
+import Services from "./Services";
+import ServiceDetail from "./ServiceDetail";
 
-export { HomePage, NotFound, Blog, BlogPost, ProgrammaPage, PortfolioPage, TeamPage };
+export { HomePage, NotFound, Blog, BlogPost, ProgrammaPage, PortfolioPage, TeamPage, ProjectDetail, Services, ServiceDetail };

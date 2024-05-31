@@ -1,76 +1,68 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import Card from "../components/Card";
 import Header from "../components/header";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_PROJECTS } from "../graphql/queries";
-
+import SearchBar from "../components/SearchBar";
+import FilterButtons from "../components/FilterButtons";
 
 export default function PortfolioPage() {
-  const [filter, setFilter] = useState("all");
-  const cardColors = ["bg-custom-red", "bg-custom-green", "bg-custom-purple"];
+    const [filter, setFilter] = useState("all");
+    const [filteredProjects, setFilteredProjects] = useState(["start"]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const cardColors = ["bg-custom-red", "bg-custom-green", "bg-custom-purple"];
+    const filters = [
+        { name: "Alles", value: "all" },
+        { name: "Backend", value: "backend" },
+        { name: "Computer Programming", value: "computer programming" },
+        { name: "@Work", value: "@work" },
+    ];
 
-  const { loading, error, data } = useQuery(GET_ALL_PROJECTS);
-  if (loading) return <div>...Loading</div>;
-  if (error) return <div>...error</div>;
+    const { loading, error, data } = useQuery(GET_ALL_PROJECTS);
+    if (loading) return <div>...Loading</div>;
+    if (error) return <div>...error</div>;
 
-  const handleFilterChange = (newFilter) => {
-    setFilter(newFilter);
-  };
+    const handleFilterChange = (newFilter) => {
+        setFilter(newFilter);
+        const filteredData = newFilter === "all" ? data.projects : data.projects.filter((project) => project.filter === newFilter);
+        setFilteredProjects(filteredData);
+    };
 
-  const filteredProjects = filter === "all" ? data.projects : data.projects.filter((project) => project.filter === filter);
-  console.log(filteredProjects);
+    const handleSearch = () => {
+        const filteredData = data.projects.filter((blog) => {
+            return blog.title.toLowerCase().includes(searchTerm) || blog.subtitle.toLowerCase().includes(searchTerm);
+        });
+        setFilteredProjects(filteredData);
+    };
 
-  return (
-    <div>
-      <Helmet>
-        <title>PGM | portfolio</title>
-        <meta name="description" content="PGM portfolio" />
-      </Helmet>
-      <Header title="Portfolio" />
+    return (
+        <div>
+            <Helmet>
+                <title>PGM | portfolio</title>
+                <meta name="description" content="PGM portfolio" />
+            </Helmet>
+            <Header title="Portfolio" />
 
-      <div className="flex justify-center mb-8 space-x-4">
-        <button
-          className={`bg-custom-darkblue py-2 px-4 rounded text-white hover:opacity-75 focus:outline-none`}
-          onClick={() => handleFilterChange("all")}
-        >
-          All
-        </button>
-        <button
-          className={`${cardColors[0]} py-2 px-4 rounded hover:opacity-75 focus:outline-none text-black`}
-          onClick={() => handleFilterChange("backend")}
-        >
-          Backend
-        </button>
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={handleSearch} />
 
-        <button
-          className={`${cardColors[1]} py-2 px-4 rounded hover:opacity-75 focus:outline-none text-black`}
-          onClick={() => handleFilterChange("computer programming")}
-        >
-          Computer Programming
-        </button>
-        <button
-          className={`${cardColors[2]} py-2 px-4 rounded hover:opacity-75 focus:outline-none text-black`}
-          onClick={() => handleFilterChange("@work")}
-        >
-          @Work
-        </button>
-      </div>
+            <FilterButtons filters={filters} handleFilterChange={handleFilterChange} cardColors={cardColors} />
 
-      <div className="grid grid-cols-3 max-w-custom-1440 gap-2 mb-8 mx-auto">
-        {filteredProjects.map((project, index) => (
-          <Card
-            key={index}
-            index={index}
-            title={project.title}
-            subtitle={project.subtitle}
-            imgUrl="/img/subject.svg"
-            imgAlt={index + project.title}
-            color={cardColors[index % cardColors.length]}
-            className="p-2"
-          />
-        ))}
-      </div>
-    </div>
-  );
+            <div className="flex flex-wrap justify-around max-w-custom-1440 gap-2 mb-8 mx-auto">
+                {(filteredProjects[0] === "start" ? data.projects : filteredProjects).map((project, index) => (
+                    <Card
+                        key={index}
+                        index={index}
+                        page={`/project/${project.id}`}
+                        title={project.title}
+                        subtitle={project.subtitle}
+                        imgUrl="/img/subject.svg"
+                        imgAlt={index + project.title}
+                        color={cardColors[index % cardColors.length]}
+                        className="p-2"
+                    />
+                ))}
+            </div>
+        </div>
+    );
 }
