@@ -17,8 +17,8 @@ const Opleiding = () => {
                 }
             />
 
-            <div className="max-w-custom-1440 mx-auto mt-8 flex flex-row justify-between flex-wrap">
-                <div className="w-80 rounded-2xl  shadow-2xl p-8 bg-gradient-to-r from-white to-blue-100">
+            <div className="max-w-custom-1440 mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div className="rounded-2xl shadow-2xl p-8 bg-gradient-to-r from-white to-blue-100">
                     <div className="flex justify-center my-6">
                         <img src="/img/chronometer.png" alt="time icon" className="w-16 h-16" />
                     </div>
@@ -28,7 +28,7 @@ const Opleiding = () => {
                     </div>
                 </div>
 
-                <div className="w-80 rounded-2xl  shadow-2xl p-8 bg-gradient-to-r from-white to-blue-100 mt-4">
+                <div className="rounded-2xl shadow-2xl p-8 bg-gradient-to-r from-white to-blue-100">
                     <div className="text-center">
                         <h2 className="text-2xl font-extrabold text-gray-800">Mogelijkheden</h2>
                         <ul className="text-lg text-gray-700 list-disc list-inside text-left ml-6 mt-5">
@@ -40,7 +40,7 @@ const Opleiding = () => {
                     </div>
                 </div>
 
-                <div className="w-80 rounded-2xl  shadow-2xl p-8 bg-gradient-to-r from-white to-blue-100 mt-4">
+                <div className="rounded-2xl shadow-2xl p-8 bg-gradient-to-r from-white to-blue-100">
                     <div className="flex justify-center my-6">
                         <img src="/img/translate.png" alt="time icon" className="w-16 h-16" />
                     </div>
@@ -50,7 +50,7 @@ const Opleiding = () => {
                     </div>
                 </div>
 
-                <div className="w-80 rounded-2xl  shadow-2xl p-8 bg-gradient-to-r from-white to-blue-100 mt-4">
+                <div className="rounded-2xl shadow-2xl p-8 bg-gradient-to-r from-white to-blue-100">
                     <div className="flex justify-center my-6">
                         <img src="/img/school-building.png" alt="time icon" className="w-16 h-16" />
                     </div>
@@ -62,15 +62,15 @@ const Opleiding = () => {
             </div>
 
             <div className="bg-custom-darkblue">
-                <div className="max-w-custom-1440 mx-auto mt-24 flex flex-row gap-48">
-                    <div>
+                <div className="max-w-custom-1440 mx-auto mt-24 flex flex-col sm:flex-row items-center justify-between">
+                    <div className="text-center sm:text-left max-w-xl">
                         <h2 className="text-4xl font-extrabold mt-20 mb-4 text-white">Infodag 29 juni</h2>
-                        <p className="text-lg text-gray-300 max-w-xl">
+                        <p className="text-lg text-gray-300">
                             Vragen stellen aan docenten en studenten? Een rondleiding volgen of een cursus inkijken? Kom naar de infodag op zaterdag
                             29 juni en ontdek of de opleiding écht bij jou past.
                         </p>
                     </div>
-                    <img className="max-w-96" src="/img/opendeurdag.png" alt="opendag foto" />
+                    <img className="max-w-96 mt-10 sm:mt-0" src="/img/opendeurdag.png" alt="opendag foto" />
                 </div>
             </div>
 

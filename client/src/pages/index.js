@@ -9,5 +9,6 @@ import ProjectDetail from "./ProjectDetail";
 import Services from "./Services";
 import ServiceDetail from "./ServiceDetail";
 import Opleiding from "./Opleiding";
+import TeamDetail from "./TeamDetail";
 
-export { HomePage, NotFound, Blog, BlogPost, ProgrammaPage, PortfolioPage, TeamPage, ProjectDetail, Services, ServiceDetail, Opleiding };
+export { HomePage, NotFound, Blog, BlogPost, ProgrammaPage, PortfolioPage, TeamPage, ProjectDetail, Services, ServiceDetail, Opleiding, TeamDetail };

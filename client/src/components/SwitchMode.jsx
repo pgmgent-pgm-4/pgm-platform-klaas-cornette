@@ -1,22 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 
 const ThemeSwitcher = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(() => {
+        const savedMode = localStorage.getItem("darkMode");
+        return savedMode ? JSON.parse(savedMode) : false;
+    });
 
     const toggleTheme = () => {
-        setIsDarkMode(!isDarkMode);
-        if (!isDarkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        const newMode = !darkMode;
+        setDarkMode(newMode);
+        localStorage.setItem("darkMode", JSON.stringify(newMode));
     };
 
-    return (
-        <button onClick={toggleTheme}>
-            {isDarkMode ? '🌞' : '🌑' }
-        </button>
-    );
+    useEffect(() => {
+        if (darkMode) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }, [darkMode]);
+
+    return <button onClick={toggleTheme}>{darkMode ? "🌞" : "🌑"}</button>;
 };
 
 export default ThemeSwitcher;

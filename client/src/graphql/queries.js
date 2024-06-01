@@ -95,3 +95,38 @@ export const GET_SERVICE_BY_ID = gql`
     }
 `;
 
+export const GET_ALL_TEAM = gql`
+    query GetTeam($first: Int = 1000, $skip: Int = 0) {
+        teams(first: $first, skip: $skip) {
+            id
+            firstName
+            lastName
+            githubName
+            description
+            foto {
+                url
+            }
+            subjects {
+                course
+            }
+        }
+    }
+`;
+
+export const GET_TEAM_BY_ID = gql`
+    query GetTeamById($id: ID!) {
+        team(where: { id: $id }) {
+            id
+            firstName
+            lastName
+            githubName
+            description
+            foto {
+                url
+            }
+            subjects {
+                course
+            }
+        }
+    }
+`;

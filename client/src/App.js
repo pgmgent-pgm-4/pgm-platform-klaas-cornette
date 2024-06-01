@@ -6,7 +6,7 @@ import {
 	createRoutesFromElements,
 } from "react-router-dom";
 import Root from "./layouts/Root";
-import { Blog, BlogPost, HomePage, NotFound, ProgrammaPage, PortfolioPage, TeamPage, ProjectDetail, Services, ServiceDetail, Opleiding } from "./pages";
+import { Blog, BlogPost, HomePage, NotFound, ProgrammaPage, PortfolioPage, TeamPage, ProjectDetail, Services, ServiceDetail, Opleiding, TeamDetail } from "./pages";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -21,6 +21,7 @@ const router = createBrowserRouter(
 			<Route path="/services" element={<Services />} />
 			<Route path="/service/:id" element={<ServiceDetail />} />
 			<Route path="/opleiding" element={<Opleiding />} />
+			<Route path="/team/:id" element={<TeamDetail />} />
 
 
 		</Route>
