@@ -56,7 +56,7 @@ export default function PortfolioPage() {
                         page={`/project/${project.id}`}
                         title={project.title}
                         subtitle={project.subtitle}
-                        imgUrl="/img/subject.svg"
+                        imgUrl={`../img/${project.title}.jpg`}
                         imgAlt={index + project.title}
                         color={cardColors[index % cardColors.length]}
                         className="p-2"

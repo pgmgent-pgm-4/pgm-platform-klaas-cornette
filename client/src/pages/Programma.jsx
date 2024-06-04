@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Card from "../components/Card";
 import Header from "../components/header";
-import { useQuery } from "@apollo/client";
-import { GET_ALL_SUBJECTS } from "../graphql/queries";
 import FilterButtons from "../components/FilterButtons";
+import { fetchSubjects, fetchFiteredSubjects } from "../graphql/fetch";
+import { filterSubjects } from "../helper/helper";
 
 export default function ProgrammaPage() {
-    const [filter, setFilter] = useState("all subjects");
-    const [filteredSubjects, setFilteredSubjects] = useState(["start"])
+    const [filteredSubjects, setFilteredSubjects] = useState([])
+    const [data, setData] = useState([{}])
     const cardColors = ["bg-custom-red", "bg-custom-green", "bg-custom-purple"];
     const periodsOrder = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"];
     const filters = [
@@ -16,31 +16,30 @@ export default function ProgrammaPage() {
         { name: "Interactive Front-end Development", value: "frontend" },
         { name: "Alles", value: "all subjects" }
     ]
+    useEffect(() => {
+        const fetchData = async () => {
+            const filterdeData = await fetchFiteredSubjects()
+            const data = await fetchSubjects()
+            setData(data)
+            setFilteredSubjects(filterdeData)
+        }
+            fetchData()
+        
+        }, [])
 
-    const { loading, error, data } = useQuery(GET_ALL_SUBJECTS);
-    if (loading) return <div>...Loading</div>;
-    if (error) return <div>...error</div>;
+    
+    //if (loading) return <div>...Loading</div>;
+    //if (error) return <div>...error</div>;
 
     const handleFilterChange = (newFilter) => {
-        setFilter(newFilter);
-        const filteredData = data.subjects.filter(subject => subject.major === newFilter || subject.major === "Fullstack" || newFilter === "all subjects")
-        const groupedSubjects = filteredData.reduce((acc, subject) => {
-            const period = subject.periode;
-            const year = period.startsWith("p1") || period.startsWith("p2") || period.startsWith("p3") || period.startsWith("p4") ? "year1" : "year2";
-    
-            if (!acc[year]) {
-                acc[year] = {};
-            }
-            if (!acc[year][period]) {
-                acc[year][period] = [];
-            }
-            acc[year][period].push(subject);
-    
-            return acc;
-        }, {});
-
-        setFilteredSubjects(groupedSubjects)
+        console.log(data)
+        const filteredData = data.filter(subject => subject.major === newFilter || subject.major === "Fullstack" || newFilter === "all subjects")
+        const groupedData = filterSubjects(filteredData)
+        setFilteredSubjects(groupedData)
     }
+    
+    
+
 
 
     return (

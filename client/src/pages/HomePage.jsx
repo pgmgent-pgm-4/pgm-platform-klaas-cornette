@@ -33,7 +33,7 @@ export default function HomePage() {
 				<meta name="description" content="Blog Post ..." />
 			</Helmet>
 			<Jumbotron />
-			<h1 className="max-w-custom-1440 mx-auto mb-4 mt-16 text-4xl font-extrabold tracking-tight leading-none text-custom-darkblue md:text-5xl lg:text-6xl">Projecten</h1>
+			<h2 className="max-w-custom-1440 mx-auto mb-4 mt-16 text-4xl font-extrabold tracking-tight leading-none text-custom-darkblue md:text-5xl lg:text-6xl">Projecten</h2>
 			<div className="flex flex-wrap justify-around max-w-custom-1440 gap-2 mt-12 mb-8 mx-auto">
                 {projects.map((project, index) => (
                     <Card
@@ -42,7 +42,7 @@ export default function HomePage() {
                         page={`/project/${project.id}`}
                         title={project.title}
                         subtitle={project.subtitle}
-                        imgUrl="/img/subject.svg"
+                        imgUrl={`../img/${project.title}.jpg`}
                         imgAlt={index + project.title}
                         color={cardColors[index % cardColors.length]}
                         className="p-2"
@@ -67,7 +67,7 @@ export default function HomePage() {
                 ))}
             </div>
 			</div>
-			<h1 className="max-w-custom-1440 mx-auto mb-4 mt-32 text-4xl font-extrabold tracking-tight leading-none text-custom-darkblue md:text-5xl lg:text-6xl">Blogs</h1>
+			<h2 className="max-w-custom-1440 mx-auto mb-4 mt-32 text-4xl font-extrabold tracking-tight leading-none text-custom-darkblue md:text-5xl lg:text-6xl">Blogs</h2>
 			<div className="flex flex-wrap justify-around max-w-custom-1440 gap-2 mt-12 mb-32 mx-auto">
                 {blogs.map((blog, index) => (
                     <Card

@@ -3,7 +3,8 @@ import ThemeSwitcher from "./SwitchMode";
 
 export default function NavBar() {
   return (
-    <div className="bg-blue-200">
+    <div className="bg-blue-200 navbar">
+      <nav>
       <div className="max-w-custom-1440 mx-auto flex justify-between items-center h-20 text-blue-900">
         <div className="ml-8">
           <a href="/" className="font-bold">
@@ -40,6 +41,7 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
+      </nav>
     </div>
     
   );

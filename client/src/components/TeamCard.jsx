@@ -10,10 +10,10 @@ export default function TeamCard({ url, firstName, lastName, githubName, id }) {
                         <img src={url} alt={firstName} className="w-64 h-64 object-cover rounded-full" />
                     </div>
                     <div className="text-center">
-                        <h2 className="text-2xl font-extrabold text-gray-800">
+                        <h2 className="text-2xl font-extrabold text-white">
                             {firstName} {lastName}
                         </h2>
-                        <p className="mt-4 text-lg text-gray-700">{githubName}</p>
+                        <p className="mt-4 text-lg text-gray-900">{githubName}</p>
                     </div>
                 </div>
             </Link>

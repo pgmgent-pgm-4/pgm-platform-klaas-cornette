@@ -17,7 +17,7 @@ const Opleiding = () => {
                 }
             />
 
-            <div className="max-w-custom-1440 mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div className="max-w-custom-1440 mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 <div className="rounded-2xl shadow-2xl p-8 bg-gradient-to-r from-white to-blue-100">
                     <div className="flex justify-center my-6">
                         <img src="/img/chronometer.png" alt="time icon" className="w-16 h-16" />
@@ -64,7 +64,7 @@ const Opleiding = () => {
             <div className="bg-custom-darkblue">
                 <div className="max-w-custom-1440 mx-auto mt-24 flex flex-col sm:flex-row items-center justify-between">
                     <div className="text-center sm:text-left max-w-xl">
-                        <h2 className="text-4xl font-extrabold mt-20 mb-4 text-white">Infodag 29 juni</h2>
+                        <h2 className="text-4xl font-extrabold mt-8 mb-4 text-white">Infodag 29 juni</h2>
                         <p className="text-lg text-gray-300">
                             Vragen stellen aan docenten en studenten? Een rondleiding volgen of een cursus inkijken? Kom naar de infodag op zaterdag
                             29 juni en ontdek of de opleiding écht bij jou past.
@@ -87,7 +87,7 @@ const Opleiding = () => {
                 </ul>
 
                 <blockquote className="mt-6 p-4 bg-blue-100 border-l-4 border-blue-500">
-                    <p className="text-lg text-gray-800">
+                    <p className=" text-lg text-gray-800">
                         "Mijn tip aan toekomstige studenten luidt: laat je niet overdonderen, maar ga mee in de flow. En aanvaard dat het wat tijd
                         kost om alles onder de knie te krijgen."
                     </p>
@@ -96,7 +96,7 @@ const Opleiding = () => {
             </div>
 
             <div className="flex flex-row flex-wrap justify-evenly max-w-custom-1440 mx-auto mt-16">
-                <div className="rounded-lg  shadow-2xl h-fit">
+                <div className="bg-white rounded-lg  shadow-2xl h-fit">
                     <div className="bg-blue-700 p-4">
                         <h2 className="text-2xl font-bold text-white">Erkend knelpuntberoep</h2>
                     </div>
@@ -108,7 +108,7 @@ const Opleiding = () => {
                     </p>
                 </div>
 
-                <div className="rounded-lg  shadow-2xl md:mt-16">
+                <div className="bg-white rounded-lg  shadow-2xl md:mt-16">
                     <div className="bg-green-700 p-4">
                         <h2 className="text-2xl font-bold text-white">Al doende leren</h2>
                     </div>
@@ -122,7 +122,7 @@ const Opleiding = () => {
                     </p>
                 </div>
 
-                <div className="rounded-lg shadow-2xl md:mt-16">
+                <div className="bg-white rounded-lg shadow-2xl md:mt-16">
                     <div className="bg-gray-700 p-4">
                         <h2 className="text-2xl font-bold text-white">Ervaring op je cv</h2>
                     </div>
@@ -132,7 +132,7 @@ const Opleiding = () => {
                         uitpakken tijdens een sollicitatiegesprek of in je portfolio.
                     </p>
                 </div>
-                <div className="rounded-lg shadow-2xl md:ml-4 lg:ml-0 md:mt-16">
+                <div className="bg-white rounded-lg shadow-2xl md:ml-4 lg:ml-0 md:mt-16">
                     <div className="bg-purple-700 p-4">
                         <h2 className="text-2xl font-bold text-white">Uitstekende begeleiding</h2>
                     </div>
@@ -144,7 +144,7 @@ const Opleiding = () => {
                         opdrachten.
                     </p>
                 </div>
-                <div className="rounded-lg shadow-2xl md:ml-4 lg:ml-0 md:mt-16">
+                <div className="bg-white rounded-lg shadow-2xl md:ml-4 lg:ml-0 md:mt-16">
                     <div className="bg-yellow-700 p-4">
                         <h2 className="text-2xl font-bold text-white">Trajecten op maat</h2>
                     </div>
@@ -154,7 +154,7 @@ const Opleiding = () => {
                         hierna contact op om je aangepast programma vast te leggen.
                     </p>
                 </div>
-                <div className="rounded-lg shadow-2xl md:mt-16 mb-32">
+                <div className="bg-white rounded-lg shadow-2xl md:mt-16 mb-32">
                     <div className="bg-red-700 p-4">
                         <h2 className="text-2xl font-bold text-white">Bachelordiploma</h2>
                     </div>

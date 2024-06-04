@@ -18,5 +18,15 @@ code {
 }
 
 .dark {
-  background-color: rgb(191 219 254) ;
+  background-color: #FFD580 ;
 }
+
+.dark nav {
+  background-color: #FFD580 ;
+}
+
+.dark h1 {
+  color: #FFD580;
+}
+
+
