@@ -8,7 +8,6 @@ import SearchBar from "../components/SearchBar";
 import FilterButtons from "../components/FilterButtons";
 
 export default function PortfolioPage() {
-    const [filter, setFilter] = useState("all");
     const [filteredProjects, setFilteredProjects] = useState(["start"]);
     const [searchTerm, setSearchTerm] = useState("");
     const cardColors = ["bg-custom-red", "bg-custom-green", "bg-custom-purple"];
@@ -24,7 +23,6 @@ export default function PortfolioPage() {
     if (error) return <div>...error</div>;
 
     const handleFilterChange = (newFilter) => {
-        setFilter(newFilter);
         const filteredData = newFilter === "all" ? data.projects : data.projects.filter((project) => project.filter === newFilter);
         setFilteredProjects(filteredData);
     };
