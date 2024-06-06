@@ -1,9 +1,27 @@
 import React from "react";
+import { useEffect, useState } from "react";
 
 const Jumbotron = () => {
+    const [style, setStyle] = useState({});
+    useEffect(() => {
+        const updateStyle = () => {
+            const isVisible = window.innerWidth > 1080;
+            const newStyle = {
+                backgroundImage: isVisible ? 'url(/img/background.svg)' : 'none',
+            };
+            setStyle(newStyle);
+        };
+
+        updateStyle();
+
+        window.addEventListener('resize', updateStyle);
+
+        return () => window.removeEventListener('resize', updateStyle);
+    }, []);
+    
     return (
             <div className="bg-center bg-no-repeat bg-custom-darkblue bg-blend-multiply">
-                <div className="px-4 mx-auto max-w-custom-1440 text-center py-24 lg:py-36" style={{ backgroundImage: 'url(img/background.svg)'}}>
+                <div className="px-4 mx-auto max-w-custom-1440  text-center py-24 lg:py-36" style={style}>
                     <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                         Wij zijn PGM
                     </h1>
